@@ -1,0 +1,28 @@
+<div class="rwd-list hidden">
+  <ul>
+    <% for (let i = 0; i < 3; i++) { %>
+        <li class="w-full border-b border-nav-border">
+          <button
+            class="my-nav w-full flex rounded items-center justify-between"
+          >
+            <span class="mr-1 py-2 px-4">主機<%= i %></span>
+            <i data-id="<%= i %>"  class=" rwd-li-toggle
+                fa-solid fa-angle-down fa-lg text-nav-text py-2 px-4"></i>
+          </button>
+          <div class="rwd-ul-toggle max-h-0 overflow-hidden" data-id="<%= i %>" >
+              <ul class=" bg-nav-bg text-nav-text py-2 pl-4 ">
+                <li class="rwd-list-li">
+                  <a class="block " href="#">賣到嚇嚇叫一號<%= i %></a>
+                </li>
+                <li class="rwd-list-li">
+                  <a class="block" href="#">賣到嚇嚇叫二號<%= i %></a>
+                </li>
+                <li class="rwd-list-li">
+                  <a class="block" href="#">某三<%= i %></a>
+                </li>
+              </ul>
+          </div>
+        </li>
+      <% } %>
+  </ul>
+</div>

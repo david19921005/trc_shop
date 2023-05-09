@@ -11,8 +11,13 @@ module.exports = {
           title: "#9F7E69",
         },
         nav: {
-          text:'#999'
+          text:'#999',
+          border:'#e5e5e5',
+          bg:'#f8f8f8;'
         },
+        hover:{
+          text:'#666'
+        }
       },
     },
   },

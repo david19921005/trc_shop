@@ -1,6 +1,9 @@
-<header>
+<header class="my-header w-full">
   <div class="my-container flex items-center justify-between h-16">
     <div class="wrap flex items-center">
+      <div class=" lg:hidden pr-8 cursor-pointer" onclick="coverToggle()">
+        <i class="fa-solid fa-bars fa-lg my-nav-icon"></i>
+      </div>
       <div class="logo max-w-[90px]">
         <a href="#">
           <img
@@ -11,18 +14,20 @@
           />
         </a>
       </div>
-      <nav class="pl-12 flex-1">
+      <nav class="hidden lg:block pl-12 flex-1">
         <ul class="flex items-center">
-            <%include nav-list%>
+          <% for (let i = 0; i < 3; i++) { %>
+            <% include nav-list %>
+          <% } %>
         </ul>
       </nav>
     </div>
     <div class="flex items-center">
       <div class="pr-11">
-        <i class="fa-regular fa-user fa-lg" style="color: #999"></i>
+        <i class="fa-regular fa-user fa-lg my-nav-icon"></i>
       </div>
       <div>
-        <i class="fa-solid fa-cart-plus fa-lg" style="color: #999"></i>
+        <i class="fa-solid fa-cart-plus fa-lg my-nav-icon"></i>
       </div>
     </div>
   </div>

@@ -6,6 +6,15 @@ html, body{
     @apply font-sans
 }
 
+body {
+    @apply relative bg-nav-bg pt-16 min-h-screen
+     flex flex-col justify-between
+}
+
+.my-header{
+    @apply fixed top-0 left-0 border-b border-nav-border bg-white drop-shadow-sm z-10
+}
+
 .my-container{
     max-width:1200px;
     margin:auto;
@@ -13,4 +22,40 @@ html, body{
 }
 .my-nav{
     @apply font-normal text-nav-text
+}
+
+.my-nav-li{
+    @apply bg-white border-nav-border border-l border-r py-2 text-center font-normal 
+    first:rounded-t first:border-t
+    last:rounded-b last:border-b
+    hover:bg-nav-bg hover:text-hover-text
+}
+
+.my-contnet{
+    width:max-content;
+}
+
+.my-nav-icon{
+    @apply text-nav-text hover:text-hover-text cursor-pointer
+}
+.cover{
+    @apply fixed top-0 left-0 right-0 bottom-0 bg-black opacity-60 w-full h-full z-20
+}
+
+
+.rwd-list{
+    @apply absolute top-0 left-0 right-0 bottom-0 w-3/4 bg-white z-20
+    border-r border-nav-border drop-shadow-lg
+}
+
+.rwd-list-li {
+  @apply py-2 pl-7 border-nav-border hover:bg-nav-bg hover:text-hover-text;
+}
+
+.rwd-list-li:first-child {
+  border-top-color: transparent;
+}
+
+.rwd-list-li:not(:first-child) {
+  border-top-width: 1px;
 }
