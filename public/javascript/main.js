@@ -6,8 +6,8 @@ window.onload = function () {
       const targetDom = document.querySelector(
         ".rwd-ul-toggle[data-id='" + id + "']"
       );
-      targetDom.classList.toggle("max-h-full");
-      targetDom.classList.toggle("max-h-0");
+      targetDom.classList.toggle("rwd-ul-toggle-leave");
+      targetDom.classList.toggle("rwd-ul-toggle-enter");
     });
   });
 };
@@ -15,5 +15,5 @@ const coverToggle = () => {
   const elementBarIcon = document.querySelector(".rwd-list");
   const elementCover = document.querySelector(".cover");
   elementCover.classList.toggle("hidden");
-  elementBarIcon.classList.toggle("hidden");
+  elementBarIcon.classList.toggle("rwd-list-leave");
 };

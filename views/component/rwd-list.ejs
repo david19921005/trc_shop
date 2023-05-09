@@ -1,4 +1,4 @@
-<div class="rwd-list hidden">
+<div class="rwd-list rwd-list-leave lg:hidden">
   <ul>
     <% for (let i = 0; i < 3; i++) { %>
         <li class="w-full border-b border-nav-border">
@@ -9,7 +9,7 @@
             <i data-id="<%= i %>"  class=" rwd-li-toggle
                 fa-solid fa-angle-down fa-lg text-nav-text py-2 px-4"></i>
           </button>
-          <div class="rwd-ul-toggle max-h-0 overflow-hidden" data-id="<%= i %>" >
+          <div class="rwd-ul-toggle rwd-ul-toggle-leave overflow-hidden" data-id="<%= i %>" >
               <ul class=" bg-nav-bg text-nav-text py-2 pl-4 ">
                 <li class="rwd-list-li">
                   <a class="block " href="#">賣到嚇嚇叫一號<%= i %></a>

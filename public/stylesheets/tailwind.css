@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+    .my-nav-enter{
+        max-height: 1000px;
+        transition: max-height 2s ease;
+    }
+  }
+
 html, body{
     @apply font-sans
 }
@@ -21,7 +28,7 @@ body {
     @apply px-5
 }
 .my-nav{
-    @apply font-normal text-nav-text
+    @apply font-normal text-nav-text overflow-hidden
 }
 
 .my-nav-li{
@@ -46,6 +53,23 @@ body {
 .rwd-list{
     @apply absolute top-0 left-0 right-0 bottom-0 w-3/4 bg-white z-20
     border-r border-nav-border drop-shadow-lg
+}
+
+.rwd-list{
+    transition: all 0.5s;
+}
+
+.rwd-ul-toggle-enter{
+    max-height: 1000px;
+    transition: max-height 0.5s ease-in;
+}
+.rwd-ul-toggle-leave{
+    max-height: 0px;
+    transition: max-height 0.5s ease-out;
+}
+
+.rwd-list-leave{
+    transform: translateX(-1000px);
 }
 
 .rwd-list-li {

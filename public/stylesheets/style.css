@@ -476,6 +476,39 @@ video {
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
+.container {
+  width: 100%;
+}
+@media (min-width: 640px) {
+
+  .container {
+    max-width: 640px;
+  }
+}
+@media (min-width: 768px) {
+
+  .container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+
+  .container {
+    max-width: 1024px;
+  }
+}
+@media (min-width: 1280px) {
+
+  .container {
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1536px) {
+
+  .container {
+    max-width: 1536px;
+  }
+}
 .absolute {
   position: absolute;
 }
@@ -547,6 +580,10 @@ video {
 .bg-nav-bg {
   background-color: #f8f8f8;;
 }
+.bg-slate-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(100 116 139 / var(--tw-bg-opacity));
+}
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -577,6 +614,9 @@ video {
 }
 .pt-5 {
   padding-top: 1.25rem;
+}
+.pt-3 {
+  padding-top: 0.75rem;
 }
 .text-center {
   text-align: center;
@@ -631,6 +671,7 @@ body {
     padding-left: 1.25rem;
     padding-right: 1.25rem}
 .my-nav {
+  overflow: hidden;
   font-weight: 400;
   --tw-text-opacity: 1;
   color: rgb(153 153 153 / var(--tw-text-opacity));
@@ -712,6 +753,20 @@ body {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    transition: all 0.5s;
+}
+
+.rwd-ul-toggle-enter{
+    max-height: 1000px;
+    transition: max-height 0.5s ease-in;
+}
+.rwd-ul-toggle-leave{
+    max-height: 0px;
+    transition: max-height 0.5s ease-out;
+}
+
+.rwd-list-leave{
+    transform: translateX(-1000px);
 }
 
 .rwd-list-li {
@@ -736,14 +791,15 @@ body {
   border-top-width: 1px;
 }
 
-.group:hover .group-hover\:block {
-  display: block;
-}
-
 .group:hover .group-hover\:text-hover-text {
   --tw-text-opacity: 1;
   color: rgb(102 102 102 / var(--tw-text-opacity));
 }
+
+.group:hover .group-hover\:my-nav-enter{
+        max-height: 1000px;
+        transition: max-height 2s ease;
+    }
 
 @media (min-width: 1024px) {
 
