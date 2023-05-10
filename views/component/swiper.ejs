@@ -1,0 +1,60 @@
+<div class="">
+  <!-- Slider main container -->
+  <div class="swiper mySwiper h-40 sm:h-52 md:h-80 lg:h-96 xl:h-[400px]">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="https://picsum.photos/1920/500?random=20" />
+      </div>
+      <div class="swiper-slide">
+        <img src="https://picsum.photos/1920/500?random=21" />
+      </div>
+      <div class="swiper-slide">
+        <img src="https://picsum.photos/1920/700?random=22" />
+      </div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    spaceBetween: 30,
+    effect: "fade",
+    loop:true,
+    autoplay:{
+        delay:2000,
+        disableOnInteraction: false, // 禁用點擊時停止自動播放
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+
+  swiper.on('click', function() {
+  swiper.autoplay.start();
+});
+</script>
+
+<style>
+  .swiper {
+    max-width: 100%;
+    overflow: hidden;
+  }
+  .swiper img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>

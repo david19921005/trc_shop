@@ -7,6 +7,14 @@
         max-height: 1000px;
         transition: max-height 2s ease;
     }
+    .cart-list-leave{
+        right: -1000px;
+        transition: right 0.5s;
+    }
+    .cart-list{
+        transition: right 0.5s;
+    }
+    
   }
 
 html, body{
@@ -55,10 +63,6 @@ body {
     border-r border-nav-border drop-shadow-lg
 }
 
-.rwd-list{
-    transition: all 0.5s;
-}
-
 .rwd-ul-toggle-enter{
     max-height: 1000px;
     transition: max-height 0.5s ease-in;
@@ -71,6 +75,10 @@ body {
 .rwd-list-leave{
     transform: translateX(-1000px);
 }
+.rwd-list{
+    transition: all 0.5s;
+}
+
 
 .rwd-list-li {
   @apply py-2 pl-7 border-nav-border hover:bg-nav-bg hover:text-hover-text;
@@ -82,4 +90,12 @@ body {
 
 .rwd-list-li:not(:first-child) {
   border-top-width: 1px;
+}
+
+.cart-list{
+    @apply fixed top-0 w-3/4 bg-white z-30
+    border-r border-nav-border drop-shadow-lg h-full
+}
+.cart-list-enter{
+    right: 0;
 }

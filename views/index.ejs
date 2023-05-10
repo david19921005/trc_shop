@@ -1,67 +1,18 @@
 <!DOCTYPE html>
 <html>
   <%include component/head%>
-  <body>
+  <body class=" overflow-hidden">
     <!-- 遮罩 -->
     <%include component/cover%>
     <%include component/rwd-list%>
+    <%include component/cart%>
     <!-- 導覽列 -->
-    <div>
-      <%include component/header%>
-    </div>
+    <div><%include component/header%></div>
     <!-- 內容 -->
-    <div class="flex-1 pt-3">
-      <div>
-        <!-- Slider main container -->
-        <div class="swiper mySwiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-            </div>
-          </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
+    <div class="flex-1">
+      <%include component/swiper%>
     </div>
     <!-- footer -->
-    <div>
-      <%include component/footer%>
-    </div>
-    
+    <div><%include component/footer%></div>
   </body>
 </html>
-
-<script>
- var swiper = new Swiper(".mySwiper", {
-      spaceBetween: 30,
-      effect: "fade",
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-    });
-</script>
-
-<style>
-  .swiper {
-  max-width: 100%;
-  max-height: 500px;
-  height: auto;
-}
-  .swiper img{
-    object-fit: cover;
-    width: 100%;
-  }
-</style>
