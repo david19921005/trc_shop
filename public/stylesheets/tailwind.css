@@ -8,7 +8,7 @@
         transition: max-height 2s ease;
     }
     .cart-list-leave{
-        right: -1000px;
+        right: -5000px;
         transition: right 0.5s;
     }
     .cart-list{
@@ -93,7 +93,7 @@ body {
 }
 
 .cart-list{
-    @apply fixed top-0 w-3/4 bg-white z-30
+    @apply fixed top-0 w-3/4 sm:w-96 bg-white z-30
     border-r border-nav-border drop-shadow-lg h-full
 }
 .cart-list-enter{

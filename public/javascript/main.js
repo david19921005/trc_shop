@@ -35,7 +35,6 @@ window.onload = function () {
   });
 
   elementCover.addEventListener("click", (event) => {
-    console.log(coverDom === 'bars')
     elementCover.classList.toggle("hidden");
     if(coverDom === 'bars'){
       const elementBarList = document.querySelector(".rwd-list");
@@ -49,7 +48,36 @@ window.onload = function () {
     }
   });
 
-  
+  const marqueeContent = document.querySelector('.marquee-content');
+let marqueePosition = window.innerWidth; // 從右邊開始進入畫面
+const marqueeSpeed = 2; // 跑馬燈滾動速度
+let marqueeTimer; // 定時器
+
+// 設定跑馬燈寬度
+function setMarqueeWidth() {
+  const marqueeWidth = marqueeContent.offsetWidth + 20; // 加上一些額外的空間
+  marqueeContent.style.width = marqueeWidth + 'px';
+}
+
+window.addEventListener('resize', function() {
+  clearTimeout(marqueeTimer); // 暫停定時器
+  setMarqueeWidth(); // 重新設定寬度
+  marqueeTimer = setTimeout(moveMarquee, 500); // 500ms後重新開始滾動
+});
+
+setMarqueeWidth(); // 初始設定寬度
+moveMarquee(); // 開始滾動
+
+// 跑馬燈滾動效果
+function moveMarquee() {
+  marqueePosition -= marqueeSpeed;
+  marqueeContent.style.left = marqueePosition + 'px';
+  if (marqueePosition < -marqueeContent.offsetWidth) {
+    marqueePosition = window.innerWidth; // 從右邊重新進入畫面
+  }
+  marqueeTimer = setTimeout(moveMarquee, 30); // 每 30ms 滾動跑馬燈
+}
+
 };
 
 
