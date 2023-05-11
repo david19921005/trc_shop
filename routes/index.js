@@ -8,4 +8,8 @@ router.get(['/','/index'], function(req, res, next) {
   res.render('index', { title: 'TEST node',currentYear: currentYear,footerTitle:'賣到併棒叫小舖' });
 });
 
+router.get('/login', function(req, res, next) {
+  res.render('login', { title: 'login'});
+});
+
 module.exports = router;
