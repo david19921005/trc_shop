@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <%include component/head%>
-  <body class=" overflow-hidden">
+  <body>
     <!-- 遮罩 -->
     <%include component/cover%>
     <%include component/rwd-list%>
@@ -12,7 +12,15 @@
     <div class="flex-1">
       <%include component/swiper%>
       <!-- <%include component/marquee%> -->
-      
+      <%include component/hot%> 
+      <% var productList = [ { Name: '主機', items: [
+      { Name: '主機一號', price: '2000' }, { Name: '主機二號', price: '2500' },
+      ] }, { Name: '菸油', items: [ { Name:
+      '菸油一號', price: '1000' }, { Name: '菸油二號', price: '2990' }, { Name:
+      '菸油三號', price: '2750' } ] } ]; %> 
+      <% for (let i = 0; i < productList.length; i++) { %> 
+        <%include component/product%> 
+      <% } %>
     </div>
     <!-- footer -->
     <div><%include component/footer%></div>

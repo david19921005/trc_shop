@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%include component/head%>
+  <body>
+    <div class="login-box absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white border rounded-lg p-4 w-2/3 ">
+      <div class="w-full flex justify-end mb-4">
+        <button
+          id="login-tab"
+          class="bg-gray-200 py-2 px-4 rounded-tl-lg rounded-bl-lg font-bold"
+        >
+          登入
+        </button>
+        <button
+          id="register-tab"
+          class="py-2 px-4 rounded-tr-lg rounded-br-lg font-bold"
+        >
+          註冊
+        </button>
+      </div>
+      <div id="login-form" >
+        <h2 class="text-lg font-bold mb-2">登入</h2>
+        <form>
+          <!-- 登录表单元素 -->
+        </form>
+      </div>
+      <div id="register-form" class="hidden">
+        <h2 class="text-lg font-bold mb-2">註冊</h2>
+        <form>
+          <!-- 注册表单元素 -->
+        </form>
+      </div>
+    </div>
+
+    <script>
+      const loginTab = document.getElementById("login-tab");
+      const registerTab = document.getElementById("register-tab");
+      const loginForm = document.getElementById("login-form");
+      const registerForm = document.getElementById("register-form");
+
+      loginTab.addEventListener("click", () => {
+        loginTab.classList.add("bg-gray-200");
+        registerTab.classList.remove("bg-gray-200");
+        loginForm.classList.remove("hidden");
+        registerForm.classList.add("hidden");
+      });
+
+      registerTab.addEventListener("click", () => {
+        registerTab.classList.add("bg-gray-200");
+        loginTab.classList.remove("bg-gray-200");
+        registerForm.classList.remove("hidden");
+        loginForm.classList.add("hidden");
+      });
+    </script>
+  </body>
+</html>
