@@ -2,27 +2,26 @@
 <html>
   <%include component/head%>
   <body>
-    <!-- 遮罩 -->
-    <%include component/cover%>
-    <%include component/rwd-list%>
-    <%include component/cart%>
     <!-- 導覽列 -->
     <div><%include component/header%></div>
     <!-- 內容 -->
     <div class="flex-1">
       <%include component/swiper%>
       <!-- <%include component/marquee%> -->
-      <%include component/hot%> 
-      <% var productList = [ { Name: '主機', items: [
-      { Name: '主機一號', price: '2000' }, { Name: '主機二號', price: '2500' },
-      ] }, { Name: '菸油', items: [ { Name:
-      '菸油一號', price: '1000' }, { Name: '菸油二號', price: '2990' }, { Name:
-      '菸油三號', price: '2750' } ] } ]; %> 
-      <% for (let i = 0; i < productList.length; i++) { %> 
-        <%include component/product%> 
-      <% } %>
+      <%include component/hot%> <%include component/product%>
     </div>
     <!-- footer -->
     <div><%include component/footer%></div>
   </body>
 </html>
+
+<!-- 
+<%include component/hot%> 
+      <% var productList = [ { category: '竿子', items: [
+      { Name: '竿子一號', price: '2000', }, { Name: '竿子二號', price: '2500', },
+      ] }, { category: '食物', items: [ { Name:
+      '食物一號', price: '1000' }, { Name: '食物二號', price: '2990' }, { Name:
+      '食物三號', price: '2750' } ] } ]; %> 
+      <% for (let i = 0; i < productList.length; i++) { %> 
+        <%include component/product%> 
+      <% } %> -->

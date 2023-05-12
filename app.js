@@ -10,7 +10,7 @@ var cors = require('cors')
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100 // limit each IP to 100 requests per windowMs
+  max: 300 // limit each IP to 100 requests per windowMs
 });
 
 
@@ -19,6 +19,12 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+const currentDate = new Date();
+const currentYear = currentDate.getFullYear();
+app.locals.footerData ={
+  currentYear,
+  footerTitle:'賣到併棒叫小舖', 
+}
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

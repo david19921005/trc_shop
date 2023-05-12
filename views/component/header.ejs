@@ -1,3 +1,8 @@
+<!-- 遮罩 -->
+<%include cover%>
+<%include rwd-list%>
+<%include cart%>
+<%include line%>
 <header class="my-header w-full">
   <div class="my-container flex items-center justify-between h-16">
     <div class="wrap flex items-center">
@@ -5,7 +10,7 @@
         <i class="fa-solid fa-bars fa-lg my-nav-icon"></i>
       </div>
       <div class="logo max-w-[90px]">
-        <a href="#">
+        <a href="/">
           <img
             class="max-w-full h-auto align-bottom"
             src="/images/logo.svg"
@@ -16,6 +21,13 @@
       </div>
       <nav class="hidden lg:block pl-12 flex-1">
         <ul class="flex items-center">
+          <li>
+            <a href="/"
+              class="my-nav py-2 px-4 rounded items-center"
+            >
+              <span class="mr-1 group-hover:text-hover-text">首頁</span>
+            </a>
+          </li>
           <% for (let i = 0; i < 3; i++) { %>
             <% include nav-list %>
           <% } %>
@@ -24,7 +36,9 @@
     </div>
     <div class="flex items-center">
       <div class="px-4">
-        <i class="user-icon fa-regular fa-user fa-lg my-nav-icon"></i>
+        <a href="/login">
+          <i class="user-icon fa-regular fa-user fa-lg my-nav-icon"></i>
+        </a>
       </div>
       <div class=" cart pl-4">
         <i class="fa-solid fa-cart-plus fa-lg my-nav-icon"></i>

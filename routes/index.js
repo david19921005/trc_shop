@@ -3,13 +3,17 @@ var router = express.Router();
 
 /* GET home page. */
 router.get(['/','/index'], function(req, res, next) {
-  const currentDate = new Date();
-  const currentYear = currentDate.getFullYear();
-  res.render('index', { title: 'TEST node',currentYear: currentYear,footerTitle:'賣到併棒叫小舖' });
+  // const currentDate = new Date();
+  // const currentYear = currentDate.getFullYear();
+  res.render('index', { title: 'TEST node',});
 });
 
 router.get('/login', function(req, res, next) {
-  res.render('login', { title: 'login'});
+  res.render('login', { title: '登入'});
 });
+
+router.get('/catalog', function(req, res, next) {
+  res.render('catalog', { title: '產品目錄' });
+ });
 
 module.exports = router;

@@ -1,5 +1,12 @@
-<footer class="my-footer text-xs bg-black text-white py-4">
+<footer class="my-footer relative text-xs bg-black text-white py-4 z-50">
+
     <div class="my-container text-center ">
-        Copyright <%= currentYear %> © <%= footerTitle %>
+        <a class="relative z-30 inline-flex mb-4 items-center justify-center " href="https://lin.ee/WrZue1" target="_blank">
+            <i class="line-icon fa-brands fa-line text-5xl bg-white rounded-xl" style="color: #00b900"></i>
+            <p class=" pl-4">聯絡我們</p>
+        </a>
+        <p>
+            Copyright <%= footerData.currentYear %> © <%= footerData.footerTitle %>
+        </p>
     </div>
 </footer>

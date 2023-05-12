@@ -2,6 +2,7 @@
 <html lang="en">
   <%include component/head%>
   <body>
+    <%include component/header%>
     <div class="login-box absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white border rounded-lg p-4 w-2/3 max-w-md ">
       <div class="w-full flex justify-end mb-4">
         <button
@@ -18,15 +19,42 @@
         </button>
       </div>
       <div id="login-form" >
-        <h2 class="text-lg font-bold mb-2">登入</h2>
-        <form>
-          <!-- 登录表单元素 -->
+        <form class="space-y-4 md:space-y-6" action="#">
+            <div>
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">帳號</label>
+                <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" placeholder="name@company.com" required="">
+            </div>
+            <div>
+                <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">密碼</label>
+                <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" required="">
+            </div>
+            <div class="flex items-center justify-between">
+                <!-- <a href="#" class="text-sm font-medium text-primary-600 hover:underline">忘記密碼?</a> -->
+            </div>
+            <button type="submit" class="w-full bg-gray-800 text-white hover:bg-gray-950  focus:outline-none focus:ring-2 focus:ring-gray-800 focus:ring-offset-2 transition-all font-medium rounded-lg text-sm px-5 py-2.5 text-center">登入</button>
+            <p class="text-sm font-light text-gray-500">
+                還不是會員嗎? <a href="#" class="register font-medium text-primary-600 hover:underline">註冊</a>
+            </p>
         </form>
       </div>
       <div id="register-form" class="hidden">
-        <h2 class="text-lg font-bold mb-2">註冊</h2>
-        <form>
-          <!-- 注册表单元素 -->
+        <form class="space-y-4 md:space-y-6" action="#">
+            <div>
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">信箱</label>
+                <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@company.com" required="">
+            </div>
+            <div>
+                <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">密碼</label>
+                <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
+            </div>
+            <div>
+                <label for="confirm-password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">再次確認密碼</label>
+                <input type="confirm-password" name="confirm-password" id="confirm-password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
+            </div>
+            <button type="submit" class="w-full bg-gray-800 text-white hover:bg-gray-950  focus:outline-none focus:ring-2 focus:ring-gray-800 focus:ring-offset-2 transition-all font-medium rounded-lg text-sm px-5 py-2.5 text-center">註冊</button>
+            <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+                已經是會員了嗎? <a href="#" class="login font-medium text-primary-600 hover:underline dark:text-primary-500">登入</a>
+            </p>
         </form>
       </div>
     </div>
@@ -36,6 +64,8 @@
       const registerTab = document.getElementById("register-tab");
       const loginForm = document.getElementById("login-form");
       const registerForm = document.getElementById("register-form");
+      const registerSmall = document.querySelector(".register");
+      const loginSmall = document.querySelector(".login");
 
       loginTab.addEventListener("click", () => {
         loginTab.classList.add("bg-gray-200");
@@ -43,8 +73,21 @@
         loginForm.classList.remove("hidden");
         registerForm.classList.add("hidden");
       });
+      loginSmall.addEventListener("click", () => {
+        loginTab.classList.add("bg-gray-200");
+        registerTab.classList.remove("bg-gray-200");
+        loginForm.classList.remove("hidden");
+        registerForm.classList.add("hidden");
+      });
 
       registerTab.addEventListener("click", () => {
+        registerTab.classList.add("bg-gray-200");
+        loginTab.classList.remove("bg-gray-200");
+        registerForm.classList.remove("hidden");
+        loginForm.classList.add("hidden");
+      });
+
+      registerSmall.addEventListener("click", () => {
         registerTab.classList.add("bg-gray-200");
         loginTab.classList.remove("bg-gray-200");
         registerForm.classList.remove("hidden");
