@@ -13,6 +13,10 @@ router.get('/login', function(req, res, next) {
 });
 
 router.get('/catalog', function(req, res, next) {
+  console.log(req.query);
+  if(!req.query || Object.keys(req.query).length === 0){
+    console.log('No query')
+  }
   res.render('catalog', { title: '產品目錄' });
  });
 
