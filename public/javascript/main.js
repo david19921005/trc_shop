@@ -14,6 +14,18 @@ window.onload = function () {
       );
       targetDom.classList.toggle("rwd-ul-toggle-enter");
       targetDom.classList.toggle("rwd-ul-toggle-leave");
+      event.currentTarget.parentNode.classList.toggle("arrow-turn");
+    });
+  });
+  
+  const catalogIcon = document.querySelectorAll(".catalog-i");
+  catalogIcon.forEach((e) => {
+    e.addEventListener("click", (event) => {
+      // console.log(event.currentTarget)
+      const ulElement = event.currentTarget.parentNode.nextElementSibling;
+      ulElement.classList.toggle("rwd-ul-toggle-enter");
+      ulElement.classList.toggle("rwd-ul-toggle-leave");
+      event.currentTarget.classList.toggle("arrow-turn");
     });
   });
 

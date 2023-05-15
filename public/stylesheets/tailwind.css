@@ -85,9 +85,8 @@ body {
 }
 .rwd-ul-toggle-leave{
     max-height: 0px;
-    transition: max-height 0.5s ease-out;
+    transition: max-height 0.2s ease-out;
 }
-
 .rwd-list-leave{
     transform: translateX(-1000px);
 }
@@ -114,4 +113,16 @@ body {
 }
 .cart-list-enter{
     right: 0;
+}
+
+.catalog-fist-li{
+  @apply last:mb-0 mb-5
+}
+
+.catalog-li{
+    @apply first:pt-3 pb-3
+}
+
+.arrow-turn{
+    @apply rotate-90
 }
