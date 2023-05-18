@@ -33,6 +33,7 @@
     
   }
 
+
 html, body{
     @apply font-sans
 }
@@ -41,6 +42,13 @@ body {
     @apply relative bg-nav-bg pt-16 min-h-screen
      flex flex-col justify-between
 }
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 
 .my-header{
     @apply fixed top-0 left-0 border-b border-nav-border bg-white drop-shadow-sm z-10
@@ -125,4 +133,10 @@ body {
 
 .arrow-turn{
     @apply rotate-90
+}
+.detail-li{
+    @apply relative p-2 border border-nav-border rounded-lg mr-3 my-3 hover:text-hover-text hover:border-hover-text cursor-pointer 
+}
+.detail-li-none{
+    @apply relative p-2 border border-nav-border rounded-lg mr-3 my-3 cursor-not-allowed select-none
 }

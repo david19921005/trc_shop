@@ -1,12 +1,9 @@
 <!-- 遮罩 -->
-<%include cover%>
-<%include rwd-list%>
-<%include cart%>
-<%include line%>
+<%include cover%> <%include rwd-list%> <%include cart%> <%include line%>
 <header class="my-header w-full">
   <div class="my-container flex items-center justify-between h-16">
     <div class="wrap flex items-center">
-      <div class=" bar lg:hidden pr-8 cursor-pointer">
+      <div class="bar lg:hidden pr-8 cursor-pointer">
         <i class="fa-solid fa-bars fa-lg my-nav-icon"></i>
       </div>
       <div class="logo max-w-[90px]">
@@ -22,25 +19,33 @@
       <nav class="hidden lg:block pl-12 flex-1">
         <ul class="flex items-center">
           <li>
-            <a href="/"
-              class="my-nav py-2 px-4 rounded items-center"
-            >
+            <a href="/" class="my-nav py-2 px-4 rounded items-center">
               <span class="mr-1 group-hover:text-hover-text">首頁</span>
             </a>
           </li>
-          <% for (let i = 0; i < 3; i++) { %>
-            <% include nav-list %>
-          <% } %>
+          <% for (let i = 0; i < 3; i++) { %> <% include nav-list %> <% } %>
         </ul>
       </nav>
     </div>
     <div class="flex items-center">
-      <div class="px-4">
-        <a href="/login">
-          <i class="user-icon fa-regular fa-user fa-lg my-nav-icon"></i>
-        </a>
+      <div class="px-4 group relative">
+        <i
+          class="user-icon fa-regular fa-user fa-lg my-nav-icon group-hover:text-hover-text"
+        ></i>
+        <div
+          class="my-nav absolute left-1/2 -translate-x-1/2 max-h-0 pt-5 my-contnet group-hover:my-nav-enter"
+        >
+          <ul class="py-2">
+            <li class="my-nav-li">
+              <a class="block px-5" href="#">訂單資訊</a>
+            </li>
+            <li class="my-nav-li">
+              <a class="block px-5" href="/login">登出</a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class=" cart pl-4">
+      <div class="cart pl-4">
         <i class="fa-solid fa-cart-plus fa-lg my-nav-icon"></i>
       </div>
     </div>

@@ -56,6 +56,33 @@ window.onload = function () {
       elementCartList.classList.toggle("cart-list-enter");
       coverDom = "";
     }
+
+
+    //產品detail頁面
+    const decreaseBtn = document.getElementById("decrease");
+    const increaseBtn = document.getElementById("increase");
+    const quantityInput = document.getElementById("quantity");
+
+    decreaseBtn.addEventListener("click", () => {
+      let value = parseInt(quantityInput.value);
+      if (value > 1) {
+        value--;
+        quantityInput.value = value;
+      }
+    });
+
+    increaseBtn.addEventListener("click", () => {
+      let value = parseInt(quantityInput.value);
+      value++;
+      quantityInput.value = value;
+    });
+
+    quantityInput.addEventListener("input", () => {
+      let value = parseInt(quantityInput.value);
+      if (isNaN(value) || value < 1) {
+        quantityInput.value = 1;
+      }
+    });
   });
 
 

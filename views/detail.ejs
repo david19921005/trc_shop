@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <%include component/head%>
+  <body>
+    <!-- 導覽列 -->
+    <div><%include component/header%></div>
+    <!-- 內容 -->
+    <div class="flex-1">
+      <div class="my-container">
+        <div class="flex flex-wrap relative py-4">
+          <div class="w-full lg:w-6/12 p-4 ">
+            <div class="sticky top-8"><%include component/swiper-thumb%></div>
+          </div>
+          <div class="w-full lg:w-6/12 pt-4 pb-6 flex flex-col">
+            <div class="bg-white flex-1 p-4 rounded-md">
+              <div
+                class="flex text-nav-text font-medium text-xs mb-3 cursor-pointer"
+              >
+                <h2 class="hover:text-hover-text">
+                  <a href="#">第幾分類 </a>
+                </h2>
+                <h2 class="hover:text-hover-text"><a href="#">/ 品牌 </a></h2>
+                <h2 class="hover:text-hover-text">
+                  <a href="#">/ 產品標題 </a>
+                </h2>
+              </div>
+              <div class="text-nav-text font-medium pt-4">
+                <h2
+                  class="text-hover-text font-bold text-xl border-b-4 pb-2 inline pt-4"
+                >
+                  產品標題
+                </h2>
+                <div class="my-8">了欸五條因除了很自然真的，不多也是了好也好以直對吧：你看兩種⋯就只又沒有人一在周邊，覺得很回報，劇情東剛似乎沒就要。同好，很好看用擔心們不。是真不我手遊賣貨便這套。
+
+                  有只是謝謝增加了完全沒，完全沒關係明的那種習起來，了現來必是其他了印象篇第二天，沒有特。突然覺。
+                  
+                  新比較不都沒有，動面別就沒店員還以為⋯會想，哈哈哈麼多今天就本的就是：好可充滿自己，他們是一小。什麼不嗚嗚嗚，不會我一⋯了呢吧我，真的他也所以有。</div>
+                <div>
+                  <span class="text-hover-text font-bold text-xl"
+                    >NT $ 100,00</span
+                  >
+                </div>
+                <div class="my-8">
+                  <div class="font-semibold text-sm flex justify-between w-3/5">
+                    <div>
+                      <span>產品標題 _</span>
+                      <span>蘋果</span>
+                    </div>
+                    <div>
+                      <span>庫存 _</span>
+                      <span>5</span>
+                    </div>
+                  </div>
+                  <ul class="flex flex-wrap w-3/5">
+                    <li class="detail-li">
+                      <span>蘋果</span>
+                      <div
+                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hidden"
+                      >
+                        <i class="fa-solid fa-ban text-red-400"></i>
+                      </div>
+                    </li>
+                    <li class="detail-li">
+                      <span>火龍果</span>
+                      <div
+                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hidden"
+                      >
+                        <i class="fa-solid fa-ban text-red-400"></i>
+                      </div>
+                    </li>
+                    <li class="detail-li-none">
+                      <span>葡萄</span>
+                      <div
+                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                      >
+                        <i class="fa-solid fa-ban text-red-400"></i>
+                      </div>
+                    </li>
+                    <li class="detail-li-none">
+                      <span>阿拉斯加鮭魚</span>
+                      <div
+                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                      >
+                        <i class="fa-solid fa-ban text-red-400"></i>
+                      </div>
+                    </li>
+                    <li class="detail-li-none">
+                      <span>蘋果</span>
+                      <div
+                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                      >
+                        <i class="fa-solid fa-ban text-red-400"></i>
+                      </div>
+                    </li>
+                  </ul>
+
+                  <div class="flex items-center my-8">
+                    <button
+                      class="flex items-center justify-center"
+                      id="decrease"
+                    >
+                      <i class="fa-solid fa-minus"></i>
+                    </button>
+                    <input
+                      type="number"
+                      id="quantity"
+                      class="mx-6 w-16 py-1 text-center border border-gray-300"
+                      min="1"
+                      value="1"
+                    />
+                    <button
+                      class="flex items-center justify-center"
+                      id="increase"
+                    >
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
+                  </div>
+
+                  <div>
+                    <button
+                      class="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-gray-800 text-white hover:bg-gray-950 focus:outline-none focus:ring-2 focus:ring-gray-800 focus:ring-offset-2 transition-all text-sm"
+                    >
+                      加入購物車
+                    </button>
+                    <button
+                      class="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-gray-800 text-white hover:bg-gray-950 focus:outline-none focus:ring-2 focus:ring-gray-800 focus:ring-offset-2 transition-all text-sm"
+                    >
+                      立即購買
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 猜你會喜歡 -->
+        <div class="mb-8">
+          <h2 class="text-hover-text font-bold text-xl border-b-4 pb-2 inline pt-4">相關推薦</h2>
+          <div>
+            <%include component/swiper-cover%>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- footer -->
+    <div><%include component/footer%></div>
+  </body>
+</html>

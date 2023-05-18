@@ -1,0 +1,70 @@
+<style>
+  .myCover {
+    min-width: 100%;
+    height: 100%;
+    margin: 20px auto;
+  }
+
+  .myCover .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .myCover .price {
+    width: 100%;
+  }
+
+  .myCover .swiper-slide img {
+    display: block;
+    width: 100%;
+  }
+</style>
+
+<div>
+  <div class="swiper mySwiper myCover">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <%include card%>
+      </div>
+      <div class="swiper-slide">
+        <%include card%>
+      </div>
+      <div class="swiper-slide">
+        <%include card%>
+      </div>
+      <div class="swiper-slide">
+        <%include card%>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+
+<script>
+  var swiper = new Swiper(".myCover", {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      1024: {
+        slidesPerView: 4,
+        spaceBetween: 40,
+      },
+    },
+  });
+</script>
