@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <%include component/head%>
+  <body>
+    <!-- 導覽列 -->
+    <div><%include component/header%></div>
+    <!-- 內容 -->
+    <div class="flex-1">
+      <div class="my-container">
+        <!-- <p>店铺ID: <%= process.env["711_API_POST_BACK"] %></p> -->
+        <h2 class="text-lg text-nav-text text-center my-2">訂單資訊</h2>
+        <div>
+          <form>
+            <div>
+              <div class="bg-white rounded-lg py-4">
+                <div class="border-b border-nav-border px-4 py-2 mb-4">
+                  <label class="pr-3" for="name">姓名</label>
+                  <input
+                    class="bg-transparent px-2"
+                    placeholder="請填寫收件人姓名"
+                    type="text"
+                    id="name"
+                  />
+                </div>
+                <div class="border-b border-nav-border px-4 py-2 mb-4">
+                  <label class="pr-3" for="phone">電話</label>
+                  <input
+                    class="bg-transparent px-2"
+                    placeholder="請填寫收件人電話"
+                    type="text"
+                    id="phone"
+                  />
+                </div>
+                <div class="border-b border-nav-border px-4 py-2 mb-4">
+                  <label class="pr-3" for="mail">信箱</label>
+                  <input
+                    class="bg-transparent px-2"
+                    placeholder="請填寫收件人信箱"
+                    type="text"
+                    id="mail"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="my-4">
+              <div class="bg-white rounded-lg py-4">
+                <h3 class="text-lg text-nav-text text-center">配送方式</h3>
+                <div class="w-full flex my-4 px-2">
+                  <button
+                    type="button"
+                    id="711store-tab"
+                    class="w-1/2 bg-gray-200 py-2 px-4 rounded-tl-lg rounded-bl-lg font-bold"
+                  >
+                    7-11超商取貨
+                  </button>
+                  <button
+                    type="button"
+                    id="sendhome-tab"
+                    class="w-1/2 py-2 px-4 rounded-tr-lg rounded-br-lg font-bold"
+                  >
+                    宅配到府
+                  </button>
+                </div>
+
+                <div id="login-form">
+                  <div class="border-b border-nav-border px-4 py-2 mb-4">
+                    <label class="pr-3" for="mail">配送門市</label>
+                    <input
+                      class="bg-transparent px-2"
+                      placeholder="選擇配送門市"
+                      type="text"
+                      id="mail"
+                      readonly="true"
+                    />
+                  </div>
+                  <div class="px-2">
+                    <button
+                      type="button"
+                      id="searchStore"
+                      class="bg-black text-white py-2 px-4 rounded-lg font-bold"
+                    >
+                      選擇門市
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- footer -->
+    <div><%include component/footer%></div>
+
+    <script>
+      const storeTab = document.getElementById("711store-tab");
+      const sendHomeTab = document.getElementById("sendhome-tab");
+      const searchStoreTab = document.getElementById("searchStore");
+
+      storeTab.addEventListener("click", () => {
+        storeTab.classList.add("bg-gray-200");
+        sendHomeTab.classList.remove("bg-gray-200");
+      });
+
+      sendHomeTab.addEventListener("click", () => {
+        sendHomeTab.classList.add("bg-gray-200");
+        storeTab.classList.remove("bg-gray-200");
+      });
+
+      searchStoreTab.addEventListener("click", async () => {
+        try {
+          const storeInfo = await axios.post("/api/order/store");
+          // 处理storeInfo的数据
+        } catch (error) {
+          // 处理错误
+        }
+      });
+    </script>
+  </body>
+</html>

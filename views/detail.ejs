@@ -115,7 +115,6 @@
                       <i class="fa-solid fa-plus"></i>
                     </button>
                   </div>
-
                   <div>
                     <button
                       class="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-gray-800 text-white hover:bg-gray-950 focus:outline-none focus:ring-2 focus:ring-gray-800 focus:ring-offset-2 transition-all text-sm"
@@ -148,3 +147,33 @@
     <div><%include component/footer%></div>
   </body>
 </html>
+
+<script>
+
+     //產品detail頁面
+  const decreaseBtn = document.getElementById("decrease");
+  const increaseBtn = document.getElementById("increase");
+  const quantityInput = document.getElementById("quantity");
+
+  decreaseBtn.addEventListener("click", () => {
+    let value = parseInt(quantityInput.value);
+    if (value > 1) {
+      value--;
+      quantityInput.value = value;
+    }
+  });
+
+  increaseBtn.addEventListener("click", () => {
+    let value = parseInt(quantityInput.value);
+    value++;
+    quantityInput.value = value;
+  });
+
+  quantityInput.addEventListener("input", () => {
+    let value = parseInt(quantityInput.value);
+    if (isNaN(value) || value < 1) {
+      quantityInput.value = 1;
+    }
+  });
+
+</script>

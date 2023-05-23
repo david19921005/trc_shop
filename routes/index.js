@@ -28,9 +28,14 @@ router.get('/detail', function(req, res, next) {
   res.render('detail', { title: '商品' });
  });
 
-//  router.post('/test', function(req, res, next) {
-//   console.log(req.body);
-  
-//  });
+router.get('/order', function(req, res, next) {
+  res.render('order', { title: '結帳' });
+ });
+
+router.post('/order', function(req, res, next) {
+  console.log(req.body);
+  res.render('order', { title: '結帳' });
+ });
+
 
 module.exports = router;

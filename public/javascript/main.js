@@ -1,4 +1,24 @@
 window.onload = function () {
+  //回到頂端
+  const goTop = document.querySelector(".goTop");
+  const winHeight = window.innerHeight;
+  window.addEventListener("scroll", () => {
+    const y = window.scrollY;
+    if (winHeight / 3 < y) {
+      goTop.classList.remove("hidden");
+    } else {
+      goTop.classList.add("hidden");
+    }
+  });
+
+  goTop.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+
+
   let coverDom = "";
 
   const elementBarIcon = document.querySelector(".bar");
@@ -17,7 +37,7 @@ window.onload = function () {
       event.currentTarget.parentNode.classList.toggle("arrow-turn");
     });
   });
-  
+
   const catalogIcon = document.querySelectorAll(".catalog-i");
   catalogIcon.forEach((e) => {
     e.addEventListener("click", (event) => {
@@ -56,36 +76,7 @@ window.onload = function () {
       elementCartList.classList.toggle("cart-list-enter");
       coverDom = "";
     }
-
-
-    //產品detail頁面
-    const decreaseBtn = document.getElementById("decrease");
-    const increaseBtn = document.getElementById("increase");
-    const quantityInput = document.getElementById("quantity");
-
-    decreaseBtn.addEventListener("click", () => {
-      let value = parseInt(quantityInput.value);
-      if (value > 1) {
-        value--;
-        quantityInput.value = value;
-      }
-    });
-
-    increaseBtn.addEventListener("click", () => {
-      let value = parseInt(quantityInput.value);
-      value++;
-      quantityInput.value = value;
-    });
-
-    quantityInput.addEventListener("input", () => {
-      let value = parseInt(quantityInput.value);
-      if (isNaN(value) || value < 1) {
-        quantityInput.value = 1;
-      }
-    });
   });
-
-
   // const marqueeContent = document.querySelector(".marquee-content");
   // let marqueePosition = window.innerWidth; // 從右邊開始進入畫面
   // const marqueeSpeed = 2; // 跑馬燈滾動速度

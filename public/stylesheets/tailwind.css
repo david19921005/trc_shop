@@ -49,6 +49,10 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 0;
 }
 
+input:focus {
+  outline: none; 
+}
+
 
 .my-header{
     @apply fixed top-0 left-0 border-b border-nav-border bg-white drop-shadow-sm z-10
